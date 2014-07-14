@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+    <translate>
+        <modules>
+            <Flipmedia_Clickreward>
+                <files>
+                    <default>Flipmedia_Clickreward.csv</default>
+                </files>
+            </Flipmedia_Clickreward>
+        </modules>
+    </translate>
+
+    <menu>
+        <rewards translate="title" module="flipmedia_clickreward">
+            <title><![CDATA[<span class="stadmin-menu_main">Rewards</span>]]></title>
+            <sort_order>75</sort_order>
+            <children>
+            	<clickreward>
+            		<title>Reward Click Rules</title>
+            		<sort_order>99</sort_order>
+            		<children>
+                		<rulelist>
+                    		<title>Manage</title>
+                    		<sort_order>1</sort_order>
+                    		<action>adminhtml/rule</action>
+                		</rulelist>
+                		<rulenew>
+                    		<title>Create</title>
+                    		<sort_order>2</sort_order>
+                    		<action>adminhtml/rule/new</action>
+                		</rulenew>
+            		</children>
+            	</clickreward>
+            </children>
+        </rewards>
+    </menu>
+    
+    <acl>
+        <resources>
+            <admin>
+                <children>                
+                    <rewards translate="title" module="flipmedia_clickreward">
+                        <title>Rewards</title>
+                        <sort_order>75</sort_order>
+                        <children>
+            				<clickreward>
+                                <title>Reward Click Rules</title>
+            					<sort_order>99</sort_order>
+            					<children>
+                            		<rulelist>
+                                		<title>Manage Reward Click Rules</title>
+                    					<sort_order>1</sort_order>
+                            		</rulelist>
+                            		<rulenew>
+                                		<title>Create Reward Click Rule</title>
+                    					<sort_order>2</sort_order>
+                            		</rulenew>
+            					</children>
+            				</clickreward>
+                        </children>
+                    </rewards>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+        
+</config> 

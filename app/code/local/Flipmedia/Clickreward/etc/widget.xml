@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<widgets>
+    <flipmedia_clickreward_rule type="flipmedia_clickreward/rule" translate="name description" module="flipmedia_clickreward">
+        <name>Click Reward Link</name>
+        <description type="desc">Add Click Reward Link to CMS Page or Block</description>
+        <parameters>
+            <id_attrib translate="label description">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Rule ID</label>
+                <description>The Click Reward Rules Id</description>
+                <type>select</type>
+                <source_model>flipmedia_clickreward/source_rules</source_model>
+            </id_attrib>
+            <target_attrib translate="label description">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Link Target</label>
+                <description>The target for the link</description>
+                <type>select</type>
+                <values>
+                    <one translate="label">
+                        <value>_top</value>
+                        <label>_top</label>
+                    </one>
+                    <two translate="label">
+                        <value>_self</value>
+                        <label>_self</label>
+                    </two>
+                    <three translate="label">
+                        <value>_parent</value>
+                        <label>_parent</label>
+                    </three>
+                    <four translate="label">
+                        <value>_blank</value>
+                        <label>_blank</label>
+                    </four>
+                </values>
+            </target_attrib>
+            <text_attrib translate="label description">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Link Text</label>
+                <description>The text in the link</description>
+                <type>text</type>
+            </text_attrib>
+        </parameters>
+    </flipmedia_clickreward_rule>
+</widgets>
+

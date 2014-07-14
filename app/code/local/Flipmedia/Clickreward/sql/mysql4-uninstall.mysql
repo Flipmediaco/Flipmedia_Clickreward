@@ -1,0 +1,6 @@
+# DROP TARCK TABLE 
+DROP TABLE `fm_clickreward_rule_track`;
+# DROP RUL TABLE
+DROP TABLE `fm_clickreward_rule`;
+# DELETE CORE RESOURCE RECORD
+DELETE FROM `core_resource` WHERE `code` = "Flipmedia_Clickreward_setup";

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Flipmedia_Clickreward>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+            	<TBT_Rewards/>
+            	<TBT_RewardsApi/>
+                <Mage_Cms/>
+                <Mage_Customer/>
+            </depends>
+        </Flipmedia_Clickreward>
+    </modules>
+</config>

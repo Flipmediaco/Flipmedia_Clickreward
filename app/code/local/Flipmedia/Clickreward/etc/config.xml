@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Flipmedia_Clickreward>
+            <version>1.0.0</version>
+		</Flipmedia_Clickreward>
+	</modules>
+    <global>
+        <helpers>
+            <flipmedia_clickreward>
+                <class>Flipmedia_Clickreward_Helper</class>
+            </flipmedia_clickreward>
+        </helpers>
+        
+		<blocks>
+			<flipmedia_clickreward>
+				<class>Flipmedia_Clickreward_Block</class>
+			</flipmedia_clickreward>
+		</blocks>
+		
+		<models>
+			<flipmedia_clickreward>
+				<class>Flipmedia_Clickreward_Model</class>
+    	        <resourceModel>flipmedia_clickreward_mysql4</resourceModel>
+			</flipmedia_clickreward>
+			<flipmedia_clickreward_mysql4>
+            	<class>Flipmedia_Clickreward_Model_Mysql4</class>
+            	<entities>           		
+                	<rule>
+                    	<table>fm_clickreward_rule</table>
+                	</rule>
+                	<track>
+                    	<table>fm_clickreward_rule_track</table>
+                	</track>
+            	</entities>
+        	</flipmedia_clickreward_mysql4>
+		</models>
+		
+        <resources>
+            <flipmedia_clickreward_setup>
+                <setup>
+                    <module>Flipmedia_Clickreward</module>
+                </setup>
+            </flipmedia_clickreward_setup>
+            <flipmedia_clickreward_write>
+            	<connection>
+                	<use>core_write</use>
+            	</connection>
+            </flipmedia_clickreward_write>
+        	<flipmedia_clickreward_read>
+            	<connection>
+                	<use>core_read</use>
+            	</connection>
+        	</flipmedia_clickreward_read>      
+        </resources>
+        				
+	</global>
+	
+	<frontend>
+    	<routers>
+        	<click>
+            	<use>standard</use>
+            	<args>
+                	<module>Flipmedia_Clickreward</module>
+                	<frontName>click</frontName>
+            	</args>
+        	</click>
+    	</routers>
+	</frontend>
+	
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Flipmedia_Clickreward after="Mage_Adminhtml">Flipmedia_Clickreward_Adminhtml</Flipmedia_Clickreward>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    
+	<adminhtml>
+        <layout>
+            <updates>
+                <flipmedia_clickreward>
+                    <file>flipmedia/clickreward.xml</file>
+                </flipmedia_clickreward>
+            </updates>
+        </layout>
+    </adminhtml>
+
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<clickrewardmodule>
+											<title>Flipmedia Click Reward Settings</title>
+										</clickrewardmodule>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+</config>
