@@ -223,6 +223,6 @@ class Flipmedia_Clickreward_Adminhtml_RuleController extends Mage_Adminhtml_Cont
      */
     protected function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('sales/flipmedia_clickreward_rule');
+        return Mage::getSingleton('admin/session')->isAllowed('rewards/clickreward');
     }
 }
